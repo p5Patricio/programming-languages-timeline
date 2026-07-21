@@ -45,7 +45,7 @@ export default function TimelineCard({ language, onSelect }) {
         '--mouse-x': '50%',
         '--mouse-y': '50%'
       }}
-      className="group relative flex flex-col justify-between w-full h-[240px] p-5 rounded-2xl border border-white/70 dark:border-white/10 bg-white/60 dark:bg-slate-950/60 backdrop-blur-xl hover:bg-white/80 dark:hover:bg-slate-900/40 cursor-pointer shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] dark:shadow-[0_12px_40px_0_rgba(0,0,0,0.6)] hover:shadow-[0_16px_48px_0_rgba(59,130,246,0.15)] dark:hover:shadow-[0_16px_48px_0_rgba(6,182,212,0.25)] hover:border-white/90 dark:hover:border-cyan-400/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 select-none overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-white/90 dark:before:via-cyan-400/50 before:to-transparent"
+      className="group relative flex flex-col justify-between w-full min-h-[245px] h-auto p-5 rounded-2xl border border-white/70 dark:border-white/10 bg-white/60 dark:bg-slate-950/60 backdrop-blur-xl hover:bg-white/80 dark:hover:bg-slate-900/40 cursor-pointer shadow-[0_8px_32px_0_rgba(31,38,135,0.08)] dark:shadow-[0_12px_40px_0_rgba(0,0,0,0.6)] hover:shadow-[0_16px_48px_0_rgba(59,130,246,0.15)] dark:hover:shadow-[0_16px_48px_0_rgba(6,182,212,0.25)] hover:border-white/90 dark:hover:border-cyan-400/40 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 select-none overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-[1px] before:bg-gradient-to-r before:from-transparent before:via-white/90 dark:before:via-cyan-400/50 before:to-transparent"
     >
       {/* High-Tech Dot Matrix Pattern Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(#94a3b8_1px,transparent_1px)] dark:bg-[radial-gradient(#334155_1px,transparent_1px)] [background-size:12px_12px] opacity-20 dark:opacity-30 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none" />
@@ -115,7 +115,7 @@ export default function TimelineCard({ language, onSelect }) {
         </div>
 
         {/* Tagline blockquote style */}
-        <p className="font-serif italic text-xs sm:text-[13px] text-slate-600 dark:text-slate-300 mb-3.5 line-clamp-2 leading-relaxed pl-2.5 border-l border-slate-200 dark:border-slate-800 group-hover:border-indigo-500/40 dark:group-hover:border-cyan-400/40 transition-colors duration-300">
+        <p className="font-serif italic text-sm sm:text-base font-medium text-slate-700 dark:text-slate-200 mb-3.5 line-clamp-2 leading-relaxed pl-3 border-l-2 border-slate-300 dark:border-slate-700 group-hover:border-indigo-500 dark:group-hover:border-cyan-400 transition-colors duration-300">
           "{content.tagline}"
         </p>
       </div>
