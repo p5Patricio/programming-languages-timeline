@@ -11,9 +11,13 @@ import PixelBlast from './components/PixelBlast';
 import DecryptedText from './components/DecryptedText';
 import ClickSpark from './components/ClickSpark';
 import TextType from './components/TextType';
+import PrivacyModal from './components/PrivacyModal';
 
 export default function App() {
   const { t, locale } = useTranslation();
+
+  // Privacy Policy modal state
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
   // Theme state
   const [theme, setTheme] = useState(() => {
@@ -135,7 +139,7 @@ export default function App() {
       />
 
       {/* Header component */}
-      <Header theme={theme} toggleTheme={toggleTheme} />
+      <Header theme={theme} toggleTheme={toggleTheme} onOpenPrivacy={() => setIsPrivacyOpen(true)} />
 
       {/* Hero, filters, and status counter in a centered container */}
       <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
@@ -207,6 +211,12 @@ export default function App() {
         />
       )}
 
+      {/* Privacy Policy Modal */}
+      <PrivacyModal
+        isOpen={isPrivacyOpen}
+        onClose={() => setIsPrivacyOpen(false)}
+      />
+
       {/* Footer component */}
       <footer className="w-full py-8 md:py-4 border-t border-slate-200/80 dark:border-slate-800/80 bg-white/60 dark:bg-slate-950/40 backdrop-blur-md transition-colors md:fixed md:bottom-0 md:left-0 md:right-0 md:z-30">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -222,15 +232,24 @@ export default function App() {
             </div>
           </div>
           
-          <a
-            href="https://github.com/p5Patricio/programming-languages-timeline"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-650 dark:hover:text-cyan-400 font-bold transition-all duration-300 hover:translate-x-0.5"
-          >
-            <Github className="w-4 h-4 text-slate-400" />
-            <span>GitHub Repository</span>
-          </a>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setIsPrivacyOpen(true)}
+              className="text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-650 dark:hover:text-cyan-400 font-semibold underline transition-all"
+            >
+              {locale === 'en' ? 'Privacy Policy' : 'Política de Privacidad'}
+            </button>
+            <span className="text-slate-300 dark:text-slate-700">|</span>
+            <a
+              href="https://github.com/p5Patricio/programming-languages-timeline"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-650 dark:hover:text-cyan-400 font-bold transition-all duration-300 hover:translate-x-0.5"
+            >
+              <Github className="w-4 h-4 text-slate-400" />
+              <span>GitHub Repository</span>
+            </a>
+          </div>
         </div>
       </footer>
     </div>

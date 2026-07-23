@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from '../hooks/useTranslation';
-import { Sun, Moon, Languages, Sparkles } from 'lucide-react';
+import { Sun, Moon, Languages, Sparkles, ShieldCheck } from 'lucide-react';
 
-export default function Header({ theme, toggleTheme }) {
+export default function Header({ theme, toggleTheme, onOpenPrivacy }) {
   const { locale, toggleLocale, t } = useTranslation();
 
   return (
@@ -25,7 +25,20 @@ export default function Header({ theme, toggleTheme }) {
         </div>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
+          {/* Privacy Policy button */}
+          <button
+            onClick={onOpenPrivacy}
+            className="relative flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-950/40 hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300 text-xs font-medium transition-all duration-300 group active:scale-95"
+            title={locale === 'en' ? 'Privacy Policy' : 'Política de Privacidad'}
+            aria-label="Privacy Policy"
+          >
+            <ShieldCheck className="w-4 h-4 text-indigo-500 dark:text-cyan-400 group-hover:scale-110 transition-transform duration-300" />
+            <span className="hidden sm:inline font-semibold">
+              {locale === 'en' ? 'Privacy' : 'Privacidad'}
+            </span>
+          </button>
+
           {/* Locale switcher */}
           <button
             onClick={toggleLocale}
