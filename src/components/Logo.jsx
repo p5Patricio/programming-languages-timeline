@@ -3,6 +3,43 @@ import React, { useState } from 'react';
 export default function Logo({ id, brandColor, className = "w-8 h-8" }) {
   const [hasError, setHasError] = useState(false);
 
+  // Custom Inline SVG for GPT-4 (OpenAI spiral logo)
+  if (id === 'gpt4') {
+    return (
+      <svg 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke={brandColor || "#10A37F"} 
+        strokeWidth="1.6" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        className={className}
+      >
+        <path d="M4.5 16.5c-1.5-1.2-2.5-3-2.5-5 0-3.3 2.7-6 6-6h2m0 13c1.5 1.2 2.5 3 2.5 5 0 3.3-2.7 6-6 6h-2m8-11.5c1.2-1.5 3-2.5 5-2.5 3.3 0 6 2.7 6 6v2m-13 0c-1.2 1.5-3 2.5-5 2.5-3.3 0-6-2.7-6-6v-2m5.5-3.5C9.2 5.5 11 4.5 13 4.5c3.3 0 6 2.7 6 6v2M5 11.5C6.2 10 8 9 10 9c3.3 0 6 2.7 6 6v2" />
+        <path d="M12 9.5c1.4 0 2.5 1.1 2.5 2.5s-1.1 2.5-2.5 2.5-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5z" fill={brandColor || "#10A37F"} fillOpacity="0.2" />
+      </svg>
+    );
+  }
+
+  // Custom Inline SVG for Antigravity (Anti-gravity floating zero-g logo)
+  if (id === 'antigravity') {
+    return (
+      <svg 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke={brandColor || "#00E5FF"} 
+        strokeWidth="1.8" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        className={className}
+      >
+        <path d="M12 3l8 14H4l8-14z" />
+        <path d="M12 21l-5-9h10l-5 9z" fill={brandColor || "#00E5FF"} fillOpacity="0.25" />
+        <circle cx="12" cy="12" r="2.5" fill={brandColor || "#00E5FF"} />
+      </svg>
+    );
+  }
+
   // 1. Custom Inline SVG for BASIC (Retro CRT monitor)
   if (id === 'basic') {
     return (

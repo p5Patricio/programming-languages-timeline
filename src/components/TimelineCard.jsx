@@ -71,11 +71,9 @@ export default function TimelineCard({ language, onSelect }) {
         {/* Header line: Year & Category Type Pill */}
         <div className="flex items-center justify-between gap-4 mb-3">
           <span 
-            className="font-display font-black text-[10px] tracking-wider px-2 py-0.5 rounded border transition-transform duration-300 group-hover:scale-105"
+            className="font-display font-black text-[11px] tracking-wider px-2.5 py-0.5 rounded-lg transition-transform duration-300 group-hover:scale-105 text-white bg-slate-950/90 dark:bg-slate-950/95 border shadow-sm"
             style={{ 
-              color: brandColor, 
-              borderColor: `${brandColor}40`, 
-              backgroundColor: `${brandColor}08` 
+              borderColor: `${brandColor}60`, 
             }}
           >
             {language.year}

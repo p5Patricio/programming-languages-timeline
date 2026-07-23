@@ -139,11 +139,9 @@ export default function Timeline({ languages, onSelectLanguage }) {
                 {/* Year above the card */}
                 <div className="flex items-center gap-2 mb-1.5 ml-1">
                   <span 
-                    className="font-display font-black text-[11px] tracking-wider px-2 py-0.5 rounded border transition-transform duration-300 group-hover:scale-105"
+                    className="font-display font-black text-xs sm:text-sm tracking-wider px-2.5 py-0.5 rounded-lg transition-transform duration-300 group-hover:scale-105 text-white bg-slate-950/90 dark:bg-slate-950/95 border shadow-md select-none"
                     style={{ 
-                      color: brandColor, 
-                      borderColor: `${brandColor}30`, 
-                      backgroundColor: `${brandColor}08` 
+                      borderColor: `${brandColor}60`, 
                     }}
                   >
                     {lang.year}
@@ -254,7 +252,12 @@ export default function Timeline({ languages, onSelectLanguage }) {
                   <div className="absolute inset-0 rounded-full animate-ping opacity-20" style={{ backgroundColor: brandColor }} />
                   
                   {/* Dynamic Year label floating above the node */}
-                  <span className="absolute -top-7 font-display font-extrabold text-xs px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-350 shadow-sm border border-slate-200/50 dark:border-slate-800">
+                  <span 
+                    className="absolute -top-8 font-display font-black text-xs sm:text-sm px-3 py-0.5 rounded-lg text-white bg-slate-950/90 dark:bg-slate-950/95 shadow-md border select-none transition-transform duration-300 group-hover:scale-105"
+                    style={{ 
+                      borderColor: `${brandColor}60`
+                    }}
+                  >
                     {lang.year}
                   </span>
                 </div>
